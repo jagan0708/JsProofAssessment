@@ -8,10 +8,10 @@ Assessment Requirements
 4. For good measure, getTotalSupply() should return the number of NFT's you have created
 */
 class NFT {
-    constructor(title, description, imageUrl) {
-        this.title = title;
-        this.description = description;
-        this.imageUrl = imageUrl;
+    constructor(Doctorname, Department, Level) {
+        this.Doctorname = Doctorname;
+        this.Department = Department;
+        this.Level = Level;
     }
 }
 
@@ -21,8 +21,8 @@ const myNFTs = [];
 // This function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata,
 // and store it in the variable above.
-function mintNFT(title, description, imageUrl) {
-    const nft = new NFT(title, description, imageUrl);
+function mintNFT(Doctorname, Department, Level) {
+    const nft = new NFT(Doctorname, Department, Level);
     myNFTs.push(nft);
 }
 
@@ -31,9 +31,9 @@ function mintNFT(title, description, imageUrl) {
 function listNFTs() {
     for (let i = 0; i < myNFTs.length; i++) {
         const nft = myNFTs[i];
-        console.log("Title: " + nft.title);
-        console.log("Description: " + nft.description);
-        console.log("Image URL: " + nft.imageUrl);
+        console.log("Doctorname: " + nft.Doctorname);
+        console.log("Department: " + nft.Department);
+        console.log("level: " + nft.Level);
         console.log("----------------------");
     }
 }
@@ -45,10 +45,10 @@ function getTotalSupply() {
 
 // Call your functions below this line
 
-mintNFT("Sunset Painting", "A beautiful sunset over the mountains", "https://example.com/image1.png");
-mintNFT("Cityscape Photo", "Night view of the city skyline", "https://example.com/image2.png");
-mintNFT("3D Sculpture", "Digital sculpture of a mythical creature", "https://example.com/image3.png");
-mintNFT("Portrait Drawing", "A detailed pencil sketch of a person", "https://example.com/image4.png");
+mintNFT("Praveen", "Cardiologist", "Senior Doctor");
+mintNFT("Hemanth", "dentist", "Junior Doctor");
+mintNFT("Harshith", "psychiatrist", "Senior Doctor");
+mintNFT("Murthuza", "Ophthalmologist", "Senior Doctor");
 
 console.log("Listing NFTs:");
 listNFTs();
