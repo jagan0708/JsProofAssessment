@@ -1,76 +1,80 @@
-# JsProofAssessment
-```markdown
-# NFT Collection
+# Hospital NFT Management
 
-This project allows you to create and manage a collection of NFTs (Non-Fungible Tokens) with metadata including title, description, and image URL.
+This project demonstrates a simple implementation of an NFT (Non-Fungible Token) management system using JavaScript. The NFTs represent doctors in a hospital, each with specific metadata such as the doctor's name, department, and level.
 
-## Getting Started
+## Assessment Requirements
 
-These instructions will help you set up and run the project on your local machine.
+1. **Create a variable that can hold a number of NFTs. What type of variable might this be?**
+   - A variable that can hold multiple NFTs can be an array.
 
-### Prerequisites
+2. **Create an object inside your `mintNFT` function that will hold the metadata for your NFTs. The metadata values will be passed to the function as parameters. When the NFT is ready, you will store it in the variable you created in step 1.**
+   - The `mintNFT` function creates an object with the provided metadata and stores it in the `myNFTs` array.
 
-- Node.js installed on your machine
+3. **Your `listNFTs` function will print all of your NFTs' metadata to the console.**
+   - The `listNFTs` function iterates over the `myNFTs` array and prints each NFT's metadata.
 
-### Installation
+4. **For good measure, `getTotalSupply` should return the number of NFTs you have created.**
+   - The `getTotalSupply` function returns the length of the `myNFTs` array, indicating the total number of NFTs.
 
-1. Clone the repository or download the `nftCollection.js` file to your local machine.
+## Code Overview
 
-2. Navigate to the directory where the `nftCollection.js` file is located.
+### NFT Class
 
-## Usage
+The `NFT` class defines the structure for each NFT with the following properties:
+- `Doctorname`
+- `Department`
+- `Level`
 
-You can use the provided functions to mint new NFTs, list all NFTs, and get the total number of NFTs created.
+### Variables
+
+- `myNFTs`: An array to hold the minted NFTs.
 
 ### Functions
 
-1. **mintNFT(title, description, imageUrl)**
+- `mintNFT(Doctorname, Department, Level)`: Creates an NFT with the given metadata and adds it to the `myNFTs` array.
+- `listNFTs()`: Iterates over the `myNFTs` array and prints each NFT's metadata to the console.
+- `getTotalSupply()`: Returns the total number of minted NFTs.
 
-   This function creates a new NFT with the provided metadata and stores it in the `myNFTs` array.
+### Usage
 
+1. **Minting NFTs**
    ```javascript
-   mintNFT("Sunset Painting", "A beautiful sunset over the mountains", "https://example.com/image1.png");
+   mintNFT("Praveen", "Cardiologist", "Senior Doctor");
+   mintNFT("Hemanth", "Dentist", "Junior Doctor");
+   mintNFT("Harshith", "Psychiatrist", "Senior Doctor");
+   mintNFT("Murthuza", "Ophthalmologist", "Senior Doctor");
    ```
 
-2. **listNFTs()**
-
-   This function iterates over the `myNFTs` array and prints the metadata of each NFT to the console.
-
+2. **Listing NFTs**
    ```javascript
+   console.log("Listing NFTs:");
    listNFTs();
    ```
 
-3. **getTotalSupply()**
-
-   This function returns the total number of NFTs created.
-
+3. **Getting Total Supply**
    ```javascript
    console.log("Total NFTs created: " + getTotalSupply());
    ```
 
-### Example
+### Example Output
 
-Here's an example of how to use the functions:
-
-```javascript
-// Minting new NFTs
-mintNFT("Sunset Painting", "A beautiful sunset over the mountains", "https://example.com/image1.png");
-mintNFT("Cityscape Photo", "Night view of the city skyline", "https://example.com/image2.png");
-mintNFT("3D Sculpture", "Digital sculpture of a mythical creature", "https://example.com/image3.png");
-mintNFT("Portrait Drawing", "A detailed pencil sketch of a person", "https://example.com/image4.png");
-
-// Listing all NFTs
-console.log("Listing NFTs:");
-listNFTs();
-
-// Getting the total supply of NFTs
-console.log("Total NFTs created: " + getTotalSupply());
 ```
-
-### Running the Code
-
-To run the code, execute the following command in your terminal:
-
-```bash
-node nftCollection.js
+Listing NFTs:
+Doctorname: Praveen
+Department: Cardiologist
+Level: Senior Doctor
+----------------------
+Doctorname: Hemanth
+Department: Dentist
+Level: Junior Doctor
+----------------------
+Doctorname: Harshith
+Department: Psychiatrist
+Level: Senior Doctor
+----------------------
+Doctorname: Murthuza
+Department: Ophthalmologist
+Level: Senior Doctor
+----------------------
+Total NFTs created: 4
 ```
